@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('homepage');
 Route::get('articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
-
+Route::get('contact-us', [ContactController::class, 'form'])->name('contact.form');
+Route::post('contact-us', [ContactController::class, 'submit'])->name('contact.submit');
 
 
 
