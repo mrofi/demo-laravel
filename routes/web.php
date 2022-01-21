@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,8 @@ Route::get('articles', [ArticleController::class, 'index'])->name('articles.inde
 Route::get('articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
 Route::get('contact-us', [ContactController::class, 'form'])->name('contact.form');
 Route::post('contact-us', [ContactController::class, 'submit'])->name('contact.submit');
+Route::get('authors', [AuthorController::class, 'index'])->name('authors.index');
+Route::get('authors/{slug}', [AuthorController::class, 'show'])->name('authors.show');
 
 
 
