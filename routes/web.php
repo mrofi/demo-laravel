@@ -25,6 +25,11 @@ Route::post('contact-us', [ContactController::class, 'submit'])->name('contact.s
 Route::get('authors', [AuthorController::class, 'index'])->name('authors.index');
 Route::get('authors/{slug}', [AuthorController::class, 'show'])->name('authors.show');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 
 
