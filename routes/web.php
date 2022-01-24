@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('homepage');
 Route::get('articles', [ArticleController::class, 'index'])->name('articles.index');
-Route::get('articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('articles/{article:slug}', [ArticleController::class, 'show'])->name('articles.show');
 Route::get('contact-us', [ContactController::class, 'form'])->name('contact.form');
 Route::post('contact-us', [ContactController::class, 'submit'])->name('contact.submit');
 Route::get('authors', [AuthorController::class, 'index'])->name('authors.index');
