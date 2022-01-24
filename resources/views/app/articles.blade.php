@@ -5,7 +5,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
         @foreach ($articles as $article)
             <!--Card-->
-            <a href="{{ route('articles.show', ['article' => $article->slug]) }}">
+            <a href="{{ route('articles.show', compact('article')) }}">
                 <div class="md:p-8 p-2 bg-white">
                     <!--Banner image-->
                     <img
