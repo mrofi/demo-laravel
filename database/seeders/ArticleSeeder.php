@@ -21,15 +21,12 @@ class ArticleSeeder extends Seeder
         $categories = Category::get()->pluck('id')->toArray();
 
         foreach ($authors as $author) {
-            $articles = Article::factory()
-                    ->count(10)
-                    ->make([
-                        'author_id' => $author->id,
-                        'category_id' => rand(1, max($categories))
-                    ]);
-            foreach($articles as $article) {
-                $article->save();
-            }
+            Article::factory()
+                ->count(10)
+                ->create([
+                    'author_id' => $author->id,
+                    'category_id' => rand(1, max($categories))
+                ]);
         }
 
     }
