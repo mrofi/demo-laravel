@@ -21,7 +21,7 @@ class ArticlesDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'articles.action');
+            ->addColumn('action', 'cms.articles.action');
     }
 
     /**
@@ -43,9 +43,9 @@ class ArticlesDataTable extends DataTable
     public function html()
     {
         return $this->builder()
+                    ->postAjax()
                     ->setTableId('articles-table')
                     ->columns($this->getColumns())
-                    ->minifiedAjax()
                     ->dom('Bfrtip')
                     ->orderBy(1)
                     ->buttons(
@@ -71,7 +71,8 @@ class ArticlesDataTable extends DataTable
                   ->width(60)
                   ->addClass('text-center'),
             Column::make('id'),
-            Column::make('add your columns'),
+            Column::make('title'),
+            Column::make('excerpt'),
             Column::make('created_at'),
             Column::make('updated_at'),
         ];
