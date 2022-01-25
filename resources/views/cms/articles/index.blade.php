@@ -5,5 +5,13 @@
         </h2>
     </x-slot>
 
-    Article Content
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            {{$dataTable->table()}}
+        </div>
+    </div>
+
+    <x-slot name="scripts">
+        {{$dataTable->scripts()}}
+    </x-slot>
 </x-app-layout>

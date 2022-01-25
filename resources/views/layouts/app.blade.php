@@ -12,9 +12,8 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"></style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -32,5 +31,12 @@
                 {{ $slot }}
             </main>
         </div>
+
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+        {{-- <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}" defer></script> --}}
+        {{ $scripts }}
     </body>
 </html>
