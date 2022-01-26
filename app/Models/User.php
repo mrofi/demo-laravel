@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return new static(['name' => 'Admin']);
     }
+
+    public function oke()
+    {
+        //
+    }
 }
